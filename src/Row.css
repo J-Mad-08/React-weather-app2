@@ -1,0 +1,158 @@
+.originalCity {
+  font-size: 24px;
+}
+
+legend {
+  font-weight: 900;
+  font-family: "Titillium Web", sans-serif;
+  font-size: 48px;
+  /* letter-spacing: 2px; */
+  margin-top: -23px;
+  margin-bottom: -25px;
+  color: #fbff3c;
+}
+
+#converter {
+  text-decoration: none;
+  font-family: "Titillium Web", sans-serif;
+  color: #fbff3c;
+  font-size: 24px;
+  letter-spacing: 2px;
+  position: relative;
+  top: -20px;
+  right: 7px;
+}
+
+#fahrenheit {
+  font-size: 20px;
+}
+
+.active {
+  color: black;
+  font-family: "Titillium Web", sans-serif;
+  cursor: default;
+  font-size: 24px;
+  letter-spacing: 2px;
+  position: relative;
+  top: -20px;
+}
+
+.degrees-max {
+  text-decoration: none;
+  color: #fbff3c;
+}
+
+.degrees-max:hover {
+  color: rgb(18, 18, 20);
+  text-decoration: none;
+}
+
+.degrees-min {
+  text-decoration: none;
+  color: #fdff6b;
+  opacity: 70%;
+}
+
+.degrees-min:hover {
+  color: rgb(18, 18, 20);
+  text-decoration: none;
+}
+
+.degrees-min:hover {
+  color: rgb(18, 18, 20);
+  text-decoration: none;
+}
+
+.date {
+  color: rgb(18, 18, 20);
+  font-family: "Titillium Web", sans-serif;
+  font-size: 24px;
+}
+
+.col-4 {
+  font-size: 20px;
+}
+
+.slogan {
+  display: inline;
+  font-size: 20px;
+  font-style: italic;
+  color: #fbff3c;
+}
+
+#description {
+  font-size: 18px;
+}
+
+.todays-additional-weather {
+  text-align: left;
+  margin-left: -13px;
+}
+
+.user-input {
+  border-radius: 10px;
+  margin-left: -5px;
+  margin-top: 5px;
+}
+
+.navbar {
+  border-radius: 8px;
+  margin-left: -10px;
+}
+
+.btn-outline-dark {
+  margin-top: 4px;
+}
+
+.forecast {
+  position: relative;
+  top: -5px;
+  border-radius: 4px;
+  color: #fbff3c;
+  font-family: "Titillium Web", sans-serif;
+  margin: -10px;
+}
+
+.dateForecast {
+  color: black;
+}
+
+.current {
+  margin: 0px 25px;
+  padding-top: 29px;
+}
+
+h3 {
+  color: black;
+  font-size: 1.5rem;
+  margin: 1px 0px;
+  display: block;
+  padding: 0px;
+}
+
+h4 {
+  color: #282828;
+}
+
+.col-5 {
+  display: block;
+  position: relative;
+  left: 10%;
+  padding-bottom: 40px;
+}
+
+.col-12 {
+  background-color: rgba(245, 245, 245, 0.1);
+  text-align: center;
+  margin: 0px -0px 0px -50px;
+  border-radius: 10px;
+  padding: 0pt 0pt 10pt;
+}
+
+.form-control {
+  background-color: rgba(245, 245, 245, 0);
+}
+
+#sourcedCode {
+  color: #fbff3c;
+}
