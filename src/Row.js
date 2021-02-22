@@ -7,7 +7,7 @@ import Date from "./Date";
 export default function Row() {
   // State
   const [showInput, handleInput] = useState(null);
-  const [result, showResult] = useState(null);
+  const [result, showResult] = useState(false);
   const [weather, displayWeather] = useState(null);
 
   function changeData(event) {
@@ -16,6 +16,7 @@ export default function Row() {
 
   //call from API
   function showTemp(response) {
+    console.log("response is ", response.data.main.name);
     //console.log(response.data.weather);
     displayWeather({
       temperature: Math.round(response.data.main.temp),
@@ -60,6 +61,7 @@ export default function Row() {
                 value="Search"
                 className="btn btn-outline-dark"
                 id="dark-button"
+                autoFocus="on"
               ></input>
               <button
                 type="button"
@@ -80,6 +82,10 @@ export default function Row() {
     return (
       <div>
         {/* <Date /> */}
+        {/* fix the below */}
+        <h2>
+          {showInput.slice(0, 1).toUpperCase().concat(showInput.slice(1))}
+        </h2>
         <div className="row">
           <section className="current">
             <div className="col">
@@ -111,13 +117,14 @@ export default function Row() {
         </div>
       </div>
     );
-  } else {
-    //form
-    return (
-      <div>
-        <Date />
-        {form}
-      </div>
-    );
   }
+  //form
+  return (
+    <div>
+      <div className="city">Brooklyn</div>
+      <Date />
+      {form}
+      {/* {showTemp("Brooklyn")} */}
+    </div>
+  );
 }

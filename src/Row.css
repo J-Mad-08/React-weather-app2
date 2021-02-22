@@ -1,5 +1,9 @@
-.originalCity {
-  font-size: 24px;
+.city {
+  font-size: 18px;
+}
+
+h2 {
+  margin-left: 20px;
 }
 
 legend {
@@ -67,10 +71,6 @@ legend {
   color: rgb(18, 18, 20);
   font-family: "Titillium Web", sans-serif;
   font-size: 24px;
-}
-
-.col-4 {
-  font-size: 20px;
 }
 
 .slogan {
