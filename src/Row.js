@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
-
+import Date from "./Date";
 import "./Row.css";
 
-export default function Row() {
+export default function Row(props) {
   // State
   const [forecast, setForecast] = useState({ ready: false });
 
@@ -24,6 +24,7 @@ export default function Row() {
       humanFeel: response.data.main.feels_like,
     });
     // console.log("forecast is ", forecast);
+    // console.log("date is ", new Date(response.data.dt * 1000));
   }
 
   //conditional
@@ -37,12 +38,12 @@ export default function Row() {
               <legend className="current-temp"></legend>
               <span id="curTemp"> {forecast.icon}</span>
               <span id="curTemp"> {Math.round(forecast.temperature)} </span>
-              <a href="#" id="converter">
+              <span id="converter">
                 <small id="celsius">ºC</small>|<small id="fahrenheit">ºF</small>
-              </a>
+              </span>
               <div>
                 {/* date should go here */}
-                <div className="dateForecast">{Math.round(forecast.date)}</div>
+                <Date prop={forecast.date} />
                 {/* slogan */}
                 <p className="slogan">
                   {" "}
@@ -62,10 +63,10 @@ export default function Row() {
                     <bold>Low Temp:</bold>{" "}
                   </em>
                   <strong id="temp-max">
-                    {Math.round(forecast.temperature)} %
+                    {Math.round(forecast.temperature)}%{" "}
                   </strong>
                   <strong id="temp-min">
-                    {Math.round(forecast.minTemp)} %{" "}
+                    {Math.round(forecast.minTemp)}%{" "}
                   </strong>
                   <br />
                   <strong id="wind">
@@ -116,7 +117,7 @@ export default function Row() {
     const apiKey = "5d58512296f20bed286330764deb9e8d";
     //or 80995efae6a984b21a5fdccf75f0b0c2
     const units = "metric";
-    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Marietta&apiKey=${apiKey}&units=${units}`;
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&apiKey=${apiKey}&units=${units}`;
     //api.openweathermap.org/data/2.5/weather?q=Brooklyn&apiKey=5d58512296f20bed286330764deb9e8d&units=metric
     //console.log(apiUrl);
     axios.get(apiUrl).then(handleResponse);

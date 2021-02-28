@@ -10,84 +10,64 @@ export default function Forecast() {
       <section className="forecast">
         <div className="row">
           <div className="col-12">
-            <h4>☀️ Sunday</h4>
+            <h4> Sunday</h4>
             <div className="row">
               <div className="col">
                 <section className="temp">
-                  <a href="" className="degrees">
-                    20ºC
-                  </a>
-                  <a href="" className="degrees">
-                    14ºC
-                  </a>
+                  <span className="degrees">20ºC</span>
+                  <span className="degrees">14ºC</span>
                 </section>
               </div>
             </div>
           </div>
           <div className="col-12">
-            <h4>🌤 Monday</h4>
+            <h4>Monday</h4>
             <div className="row">
               <div className="col">
                 <section className="temp">
                   <bold>
-                    <a href="" className="degrees">
-                      21ºC
-                    </a>
+                    <span className="degrees">21ºC</span>
                   </bold>
-                  <a href="" className="degrees">
-                    14ºC
-                  </a>
+                  <span className="degrees">14ºC</span>
                 </section>
               </div>
             </div>
           </div>
           <div className="col-12">
-            <h4>🌥 Tuesday</h4>
+            <h4>Tuesday</h4>
             <div className="row">
               <div className="col">
                 <section className="temp">
                   <bold>
-                    <a href="" className="degrees">
-                      22ºC
-                    </a>
+                    <span className="degrees">22ºC</span>
                   </bold>
-                  <a href="" className="degrees">
-                    15ºC
-                  </a>
+                  <span className="degrees">15ºC</span>
                 </section>
               </div>
             </div>
           </div>
           <div className="col-12">
-            <h4>🌥 Wednesday</h4>
+            <h4>Wednesday</h4>
             <div className="row">
               <div className="col">
                 <section className="temp">
                   <bold>
-                    <a href="" className="degrees">
-                      24ºC
-                    </a>
+                    <span className="degrees">24ºC</span>
                   </bold>
-                  <a href="" className="degrees">
-                    13ºC
-                  </a>
+                  <span className="degrees">13ºC</span>
                 </section>
               </div>
             </div>
           </div>
           <div className="col-12">
-            <h4>🌧 Thursday</h4>
+            <h4>Thursday</h4>
             <div className="row">
               <div className="col">
                 <section className="temp">
                   <bold>
-                    <a href="" className="degrees">
-                      19ºC
-                    </a>
+                    <span className="degrees">19ºC</span>
                   </bold>
-                  <a href="" className="degrees">
-                    8ºC
-                  </a>
+                  <span className="degrees">8ºC</span>
                 </section>
               </div>
             </div>

@@ -15,7 +15,7 @@ export default function Container() {
       </h1>
       <div className="row">
         <div className="col-6">
-          <Row />
+          <Row defaultCity="Brooklyn" />
         </div>
         <div className="col-4">
           <Forecast />
