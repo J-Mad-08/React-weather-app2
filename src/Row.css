@@ -3,7 +3,8 @@
 }
 
 h2 {
-  margin-left: 20px;
+  /* margin-left: 20px; */
+  font-size: 1.5rem;
 }
 
 legend {
@@ -118,7 +119,7 @@ legend {
 }
 
 .current {
-  margin: 0px 25px;
+  /* margin: 0px 25px; */
   padding-top: 29px;
 }
 
@@ -154,5 +155,14 @@ h4 {
 }
 
 #sourcedCode {
+  color: #fbff3c;
+}
+
+.current-temp {
+  font-size: 20px;
+}
+
+#curTemp {
+  font-size: 48px;
   color: #fbff3c;
 }
