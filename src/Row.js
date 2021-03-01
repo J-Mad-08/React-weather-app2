@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
-import Date from "./Date";
+import TodaysWeather from "./TodaysWeather";
 import "./Row.css";
 
 export default function Row(props) {
   // State
   const [forecast, setForecast] = useState({ ready: false });
+  const [city, setCity] = useState(props.defaultCity);
 
   function handleResponse(response) {
     //console.log("other ", response.data);
@@ -27,70 +28,43 @@ export default function Row(props) {
     // console.log("date is ", new Date(response.data.dt * 1000));
   }
 
+  function searching(event) {
+    event.preventDefault();
+    //search for a city
+    search(city);
+  }
+
+  function changeData(event) {
+    setCity(event.target.value);
+  }
+
+  function search() {
+    // Axios
+    const apiKey = "5d58512296f20bed286330764deb9e8d";
+    //or 80995efae6a984b21a5fdccf75f0b0c2
+    const units = "metric";
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&apiKey=${apiKey}&units=${units}`;
+    //api.openweathermap.org/data/2.5/weather?q=Brooklyn&apiKey=5d58512296f20bed286330764deb9e8d&units=metric
+    //console.log(apiUrl);
+    axios.get(apiUrl).then(handleResponse);
+    //storing form
+  }
   //conditional
   if (forecast.ready) {
     return (
       <div>
-        <h2>{forecast.city}</h2>
-        <div className="row">
-          <section className="current">
-            <div className="col">
-              <legend className="current-temp"></legend>
-              <span id="curTemp"> {forecast.icon}</span>
-              <span id="curTemp"> {Math.round(forecast.temperature)} </span>
-              <span id="converter">
-                <small id="celsius">ºC</small>|<small id="fahrenheit">ºF</small>
-              </span>
-              <div>
-                {/* date should go here */}
-                <Date prop={forecast.date} />
-                {/* slogan */}
-                <p className="slogan">
-                  {" "}
-                  {forecast.description
-                    .slice(0, 1)
-                    .toUpperCase()
-                    .concat(forecast.description.slice(1))}
-                </p>
-              </div>
-              {/* additional weather goes here, high, humidity, wind... */}
-              <div className="col">
-                <div className="todays-additional-weather">
-                  <br />
-                  High Temp/
-                  <em>
-                    {" "}
-                    <bold>Low Temp:</bold>{" "}
-                  </em>
-                  <strong id="temp-max">
-                    {Math.round(forecast.temperature)}%{" "}
-                  </strong>
-                  <strong id="temp-min">
-                    {Math.round(forecast.minTemp)}%{" "}
-                  </strong>
-                  <br />
-                  <strong id="wind">
-                    Wind: {Math.round(forecast.wind)}k/h
-                  </strong>
-                  <br />
-                  <strong id="humidity">Humidity: {forecast.humidity}%</strong>
-                  <p className="slogan"></p>
-                </div>
-              </div>
-            </div>
-          </section>
-        </div>
+        <TodaysWeather data={forecast} />
+
         {/* form */}
         <div className="form">
           <section className="user-input">
             <nav className="navbar">
-              <form className="Searching">
-                {/* onSubmit={searching} */}
+              <form className="Searching" onSubmit={searching}>
                 <input
                   type="search"
                   className="form-control mr-sm-2"
                   placeholder="Search a city"
-                  // onChange={changeData}
+                  onChange={changeData}
                 ></input>
                 <input
                   type="submit"
@@ -113,15 +87,7 @@ export default function Row(props) {
       </div>
     );
   } else {
-    // Axios
-    const apiKey = "5d58512296f20bed286330764deb9e8d";
-    //or 80995efae6a984b21a5fdccf75f0b0c2
-    const units = "metric";
-    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&apiKey=${apiKey}&units=${units}`;
-    //api.openweathermap.org/data/2.5/weather?q=Brooklyn&apiKey=5d58512296f20bed286330764deb9e8d&units=metric
-    //console.log(apiUrl);
-    axios.get(apiUrl).then(handleResponse);
-    //storing form
-    return null;
+    search();
+    return "Loading...";
   }
 }
