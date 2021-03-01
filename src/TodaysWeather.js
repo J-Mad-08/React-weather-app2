@@ -13,8 +13,7 @@ export default function TodaysWeather(props) {
           <div className="col">
             <legend className="current-temp"></legend>
             {/* Weather icon */}
-            <span id="curTemp">
-              {" "}
+            <span id="icon">
               <WeatherIcon icon={source.icon} />
             </span>
             <span id="curTemp"> {Math.round(source.temperature)} </span>
