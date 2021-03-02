@@ -17,21 +17,6 @@ legend {
   color: #fbff3c;
 }
 
-#converter {
-  text-decoration: none;
-  font-family: "Titillium Web", sans-serif;
-  color: #fbff3c;
-  font-size: 24px;
-  letter-spacing: 2px;
-  position: relative;
-  top: -20px;
-  right: 7px;
-}
-
-#fahrenheit {
-  font-size: 20px;
-}
-
 .active {
   color: black;
   font-family: "Titillium Web", sans-serif;
